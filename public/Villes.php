@@ -52,16 +52,14 @@ try {
         <script src="../node_modules/datatables.net/js/dataTables.min.js"></script>
         <script src="../node_modules/dataTables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
         <script>
-            $(document).ready(function () {
-                $('#villes').DataTable();
+        $(document).ready(function () {
+            $('#villes').DataTable({
+                language: {
+                    url: '../include/traduction.json',
+                },
             });
+        });
         </script>
-        <script>
-            var table = new DataTable('#villes', {
-    language: {
-        url: '../include/traduction.json',
-    },
-});
-        </script>
+       
     </body>
 </html>
