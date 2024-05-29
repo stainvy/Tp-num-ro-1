@@ -7,6 +7,9 @@
         <link href="../css/style.css" rel="stylesheet">
     </head>
     <body>
+    <?php
+include('../include/menu.php');
+?>
         <div class="container">
             <h1>Les villes</h1>
 <?php
@@ -19,21 +22,22 @@ include("../include/connexion.php");
 $requete = 'SELECT nom
             , codepostal
             , pays
+            , code
             FROM ville';
 ?>
-    <table class="table table-striped display" style="width:100%" id="villes">
-        <thead>
-            <tr>
-                <th>Nom</th>
-                <th>Code postal</th>
-                <th>Pays</th>
-            </tr>
-        </thead>
-        <tbody>
+    <table class="table table-striped display table-hover" style="width:100%" id="villes">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Code postal</th>
+            <th>Pays</th>
+        </tr>
+    </thead>
+    <tbody>
 <?php
 try {
     foreach($bdd->query($requete) as $ligne) {
-        echo '<tr>';
+        echo '<tr class="clickable-row" data-href="ville.php?id=' . $ligne['code'] . '">';
         echo '<td>' . $ligne['nom'] . '</td>';
         echo '<td>' . $ligne['codepostal'] . '</td>';
         echo '<td>' . $ligne['pays'] . '</td>';
@@ -43,7 +47,6 @@ try {
     echo 'Erreur !: ' . $e->getMessage() . '<br>';
     die();
 }
-
 ?>
         </tbody>
     </table>
@@ -58,8 +61,13 @@ try {
                     url: '../include/traduction.json',
                 },
             });
+            $(".clickable-row").click(function() {
+        window.location = $(this).data("href");
+    });  
         });
+        
         </script>
+        
        
     </body>
 </html>

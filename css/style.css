@@ -1,0 +1,20 @@
+.clickable-row{
+    cursor: pointer;
+}
+
+.form-select:hover{
+    background-color: #f5f5f5eb;
+}
+
+.menu {
+    background-color: #f0f0f0; /* Couleur de fond grise */
+    padding: 10px; /* Espace intérieur autour du menu */
+}
+
+.nav-item {
+    margin-right: 10px; /* Espace à droite de chaque bouton */
+}
+
+.nav-link.active {
+    color: #0056b3; /* Changez cette valeur pour la couleur que vous voulez */
+}
