@@ -40,3 +40,20 @@ function menuActif($menu) {
         return '';
     }
 }
+function afficheMessages() {
+    $retour = '';
+
+    // Gestion des messages de succès
+    if(!empty($_SESSION['MSG_OK'])) {
+        $retour .= '<div class="alert alert-success">' . $_SESSION['MSG_OK'] . '</div>'."\n";
+        unset($_SESSION['MSG_OK']);
+    }
+
+    // Gestion des messages d'erreur
+    if(!empty($_SESSION['MSG_KO'])) {
+        $retour .= '<div class="alert alert-danger">' . $_SESSION['MSG_KO'] . '</div>'."\n";
+        unset($_SESSION['MSG_KO']);
+    }
+
+    echo $retour;
+}

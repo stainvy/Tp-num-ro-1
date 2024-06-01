@@ -8,6 +8,13 @@
     </head>
     <body>
     <?php
+session_start();
+if (isset($_SESSION['MSG_OK'])) {
+    echo '<div class="alert alert-success" role="alert">' . $_SESSION['MSG_OK'] . '</div>';
+    unset($_SESSION['MSG_OK']); // pour ne pas afficher le message à nouveau lors du rechargement de la page
+}
+?>
+    <?php
 include('../include/menu.php');
 ?>
         <div class="container">
