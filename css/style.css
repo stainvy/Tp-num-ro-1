@@ -7,14 +7,33 @@
 }
 
 .menu {
-    background-color: #f0f0f0; /* Couleur de fond grise */
-    padding: 10px; /* Espace intérieur autour du menu */
+    background-color: #f0f0f0; 
+    padding: 10px; 
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-item {
-    margin-right: 10px; /* Espace à droite de chaque bouton */
+    margin-right: 10px;
 }
 
 .nav-link.active {
-    color: #0056b3; /* Changez cette valeur pour la couleur que vous voulez */
+    color: #0056b3; 
+}
+
+.form-inline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-inline .form-control {
+    margin-right: 10px;
 }
